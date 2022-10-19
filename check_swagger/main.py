@@ -32,10 +32,10 @@ def main():
                 spec = json.loads(json.dumps(spec))
                 validator = swagger_spec_validator.util.get_validator(spec, url)
                 validator.validate_spec(spec, url)
-#         except yaml.YAMLError as exc:
-#             print('{}: invalid YAML'.format(filename))
-#             print(exc)
-#             return 1
+        except yaml.YAMLError as exc:
+            print('{}: invalid YAML'.format(filename))
+            print(exc)
+            return 1
         except Exception as exc:
             print('{}: invalid Swagger Spec'.format(filename))
             print(exc)
